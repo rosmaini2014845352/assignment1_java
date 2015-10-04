@@ -1,0 +1,47 @@
+package Asgmnt1;
+/*author: Rosmaini Dollah
+ * id: 2014845352
+ * program to write a biodata in textfile
+ */
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteTextFile {
+	public static void main(String[] args) {
+		try {
+           
+				
+			File file = new File("D:\\UITM Master Networking\\UITM Master Networking Rosmaini_Reference\\Semester 3\\ITT788 Advanced Network Programming\\Assgmnt_ReadTextFile\\q1readjava.txt");
+
+			// if file doesn't exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+
+			FileWriter fw = new FileWriter(file.getAbsoluteFile());
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+			bw.write("Name: Rosmaini Dollah");
+			bw.newLine(); 
+			bw.write("Matrix No.: 2014845352\n");
+			bw.newLine(); 
+			bw.write("Gender: Female\n");
+			bw.newLine(); 
+			bw.write("Age: 35 years old\n");
+			bw.newLine(); 
+			bw.write("E-mail: rosmainidollah79@gmail.com\n");
+			bw.newLine(); 
+			bw.write("Mobile Phone: 0192326037\n");
+                     
+			bw.close();
+
+			System.out.println("Done writing to file.");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
