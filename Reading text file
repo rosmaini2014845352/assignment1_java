@@ -1,0 +1,32 @@
+/**
+ * Assignment 1 question 2 - reading a text File
+ * author: Rosmaini Dollah(2014845352)
+ */
+
+package Asgmnt1;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class tryRead {
+	public static void main(String[] args) {
+		
+		System.out.println("------Begin Reading A text File------.");
+		
+		try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\user1\\Desktop\\q1readjava.txt")))
+		{
+
+			String sCurrentLine;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+				
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		System.out.println("------Done Reading A text File------.");
+	}
+}
